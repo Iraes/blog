@@ -1,0 +1,17 @@
+@import "variables";
+
+.ant-pagination {
+  align-self: center;
+  margin-bottom: 17px;
+  font-size: 12px;
+
+  &-item {
+    &-active {
+      border-radius: 4px;
+      background-color: $primary-color;
+      a {
+        color: $background-color-base;
+      }
+    }
+  }
+}

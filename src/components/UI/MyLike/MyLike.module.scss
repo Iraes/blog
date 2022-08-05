@@ -1,0 +1,18 @@
+@import "../../../scss/variables";
+
+.like {
+  margin-right: 5px;
+
+  &__wrapper {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__count {
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 400;
+    color: $text-color;
+  }
+}
+

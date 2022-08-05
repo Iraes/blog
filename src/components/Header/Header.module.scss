@@ -1,0 +1,67 @@
+@import "../../scss/variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 26px;
+  padding: 15px 22px;
+  width: 100%;
+  height: 80px;
+  background-color: $background-color-base;
+  color: $heading-color;
+}
+
+.header__text {
+ @extend %H6;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.user__wrapper {
+  display: flex;
+  align-items: center;
+  gap: 27px;
+}
+
+.register__btn {
+  padding: 14px 18px;
+  border: 1px solid $success-color;
+  border-radius: 5px;
+  @extend %H6;
+  color: $success-color;
+  cursor: pointer;
+}
+
+.create-btn {
+  padding: 6px 10px;
+  border: 1px solid $success-color;
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+  color: $success-color;
+
+  &:focus {
+    outline: none;
+    background-color: rgb(225, 255, 199);
+  }
+}
+
+
+
+.logout-btn {
+  padding: 13px 18px;
+  border: 1px solid $text-color;
+  border-radius: 5px;
+  @extend %H6;
+  color: $text-color;
+
+  &:focus {
+    outline: none;
+    background-color: #d2d2d2;
+  }
+}

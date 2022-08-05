@@ -1,0 +1,13 @@
+@import "../../scss/variables";
+
+.wrapper {
+  margin: 0 auto;
+  width: 941px;
+  background-color: $background-color-base;
+  filter: $shadow-2;
+}
+
+.content {
+  padding: 15px;
+  overflow-wrap: break-word;
+}
