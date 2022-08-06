@@ -1,8 +1,15 @@
 @import "../../scss/variables";
 
+%ControlBtn {
+  border-radius: 5px;
+  font-size: 14px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
 .wrapper {
   display: flex;
-  gap: 85px;
+  justify-content: space-between;
   padding: 15px;
   border-radius: 5px;
   background-color: $background-color-base;
@@ -24,6 +31,36 @@
     font-weight: 400;
     overflow-wrap: break-word;
     color: $text-color;
+  }
+
+  &__delete {
+    padding: 6px 17px;
+    margin-right: 12px;
+    border: 1px solid $error-color;
+    color: $error-color;
+    @extend %ControlBtn;
+
+    &:active {
+      background-color: $error-color;
+      color: $background-color-base;
+    }
+  }
+
+  &__edit {
+    padding: 6px 19px;
+    border: 1px solid $success-color;
+    color: $success-color;
+    @extend %ControlBtn;
+
+    &:active {
+      background-color: $success-color;
+      color: $background-color-base;
+    }
+  }
+
+  &__btn__wrapper {
+    display: flex;
+    justify-content: space-between;
   }
 }
 

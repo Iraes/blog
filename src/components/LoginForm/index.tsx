@@ -60,12 +60,7 @@ const LoginForm = () => {
   };
 
   if (isAuth) {
-    // return <Redirect to="/articles" />;
-    return (
-      <form className={s.wrapper}>
-        <h2 className={s.title}>Вы успешно авторизовались!</h2>
-      </form>
-    );
+    return <Redirect to="/articles" />;
   }
 
   return (

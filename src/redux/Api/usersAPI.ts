@@ -19,7 +19,7 @@ export const usersAPI = createApi({
         url: "/user",
         headers: {
           "Content-Type": "application/json; charset=utf-8",
-          Authorization: "Bearer ${token}",
+          Authorization: `Bearer ${token}`,
         },
         // params: { Authorization: token },
       }),
@@ -52,7 +52,7 @@ export const usersAPI = createApi({
         },
       }),
     }),
-    updateUser: builder.mutation<any, IUpdateUser>({
+    updateUser: builder.mutation<IUpdateUser, IUpdateUser>({
       query: (userInfo) => ({
         url: "/user",
         method: "PUT",

@@ -10,13 +10,18 @@ import {
   setArticlesOffset,
 } from "../../redux/slices/articlesSlice";
 import MyLoader from "../UI/MyLoader";
+import { selectUserInfo } from "../../redux/slices/userSlice";
 
 import s from "./ArticleList.module.scss";
 
 const ArticleList: FC = () => {
+  const { token } = useSelector(selectUserInfo);
   const { articles_offset } = useSelector(selectArticles);
   const dispatch = useDispatch();
-  const { data, error, isFetching } = useGetArticlesQuery(articles_offset);
+  const { data, error, isFetching } = useGetArticlesQuery({
+    offset: articles_offset,
+    token,
+  });
   const articlesList = data && data.articles;
 
   const onChangePage = (offset: number) => {

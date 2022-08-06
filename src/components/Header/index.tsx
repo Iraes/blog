@@ -15,11 +15,9 @@ const Header = () => {
   };
 
   function authBlock(isAuth: boolean): JSX.Element {
-    console.log();
-
     return isAuth ? (
       <>
-        <Link to="/create-article" className={s["create-btn"]}>
+        <Link to="/new-article" className={s["create-btn"]}>
           Create article
         </Link>
         <UserInfo name={username} avatarUrl={avatar} />

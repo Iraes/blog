@@ -6,6 +6,8 @@ import Article from "../Article";
 import RegisterForm from "../RegisterForm";
 import LoginForm from "../LoginForm";
 import EditProfile from "../EditProfile";
+import CreateArticle from "../../pages/CreateArticle";
+import EditArticle from "../../pages/EditArticle";
 
 import s from "./App.module.scss";
 
@@ -20,6 +22,8 @@ function App() {
         <Route path="/sign-up" component={RegisterForm} />
         <Route path="/sign-in" component={LoginForm} />
         <Route path="/profile" component={EditProfile} />
+        <Route path="/new-article" component={CreateArticle} />
+        <Route path="/articles/:slug/edit" component={EditArticle} />
       </Switch>
     </div>
   );

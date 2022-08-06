@@ -13,7 +13,7 @@ const Article = (): JSX.Element => {
   const article = data && data.article;
   return (
     <div className={s.wrapper}>
-      {article && <ArticleCard article={article} />}
+      {article && <ArticleCard article={article} isFullArticle />}
       {article && (
         <div className={s.content}>
           <ReactMarkdown>{article.body}</ReactMarkdown>

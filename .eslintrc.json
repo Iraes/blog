@@ -44,7 +44,7 @@
   "rules": {
     "indent": [
       "error",
-      2, {"SwitchCase": 1}
+      2, {"SwitchCase": 1, "ArrayExpression":  "off"}
     ],
     "@typescript-eslint/indent": "off",
     "prettier/prettier": "error",

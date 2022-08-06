@@ -16,6 +16,12 @@ export const userSlice = createSlice({
   reducers: {
     setAuth(state, action) {
       state.isAuth = action.payload;
+      if (!action.payload) {
+        state.username = "";
+        state.email = "";
+        state.token = "";
+        state.avatar = "";
+      }
     },
     setUserInfo(state, action) {
       state.username = action.payload.user.username;

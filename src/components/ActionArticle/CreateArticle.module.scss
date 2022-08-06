@@ -1,0 +1,101 @@
+@import "../../scss/variables";
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 21px;
+  margin: 0 auto;
+  padding: 50px 35px;
+  width: 940px;
+  background-color: $background-color-base;
+}
+
+.title {
+  margin: 0 auto;
+  font-family: $Roboto-font-family, sans-serif;
+  font-size: 20px;
+  line-height: 28px;
+  font-weight: 500;
+}
+
+.label {
+  &__title {
+    display: block;
+    font-family: $Roboto-font-family, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    color: #262626;
+  }
+
+  &__tags {
+    width: 590px;
+  }
+}
+
+.input {
+  padding: 8px 12px;
+  width: 100%;
+  height: 40px;
+  border: 1px solid $border-color-base;
+  border-radius: 4px;
+
+  &__tag {
+    display: inline-block;
+    margin-right: 18px;
+    margin-bottom: 5px;
+    width: 300px;
+  }
+}
+
+.text__area {
+  padding: 8px 12px;
+  width: 100%;
+  border: 1px solid $border-color-base;
+  border-radius: 4px;
+}
+
+.form__btn {
+  align-self: flex-start;
+  padding: 8px 142px;
+  border-radius: 4px;
+  background-color: $primary-color;
+  color: $background-color-base;
+}
+
+.tag {
+  &__delete {
+    margin-right: 18px;
+    padding: 8px 36px;
+    border: 1px solid $error-color;
+    border-radius: 4px;
+    color: $error-color;
+
+    &:hover {
+      background-color: $error-color;
+      color: $background-color-base;
+    }
+  }
+
+  &__add {
+    padding: 8px 40px;
+    border: 1px solid $primary-color;
+    border-radius: 4px;
+    color: $primary-color;
+
+    &:hover {
+      background-color: $primary-color;
+      color: $background-color-base;
+    }
+  }
+}
+
+.error {
+  &__text {
+    color: $highlight-color;
+  }
+
+  &__input {
+    border: 1px solid $highlight-color;
+  }
+}
