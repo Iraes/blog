@@ -20,7 +20,7 @@ const Header = () => {
         <Link to="/new-article" className={s["create-btn"]}>
           Create article
         </Link>
-        <UserInfo name={username} avatarUrl={avatar} />
+        <UserInfo name={username} avatarUrl={avatar} isHeader />
         <Link onClick={logOutHandler} to="/" className={s["logout-btn"]}>
           Log Out
         </Link>

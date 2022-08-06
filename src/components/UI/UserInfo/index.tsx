@@ -11,27 +11,46 @@ const UserInfo: FC<{
   name: string;
   date?: string;
   avatarUrl?: string;
-}> = ({ name, date, avatarUrl }) => {
+  isHeader?: boolean;
+}> = ({ name, date, avatarUrl, isHeader }) => {
   const userData =
     date && format(new Date(date), "MMMM d, yyyy", { locale: ru });
+
+  if (isHeader) {
+    return (
+      <div className={s.wrapper}>
+        <p className={s.wrapper__descr}>
+          <Link to="/profile" className={s.name}>
+            {name}
+          </Link>
+          <span className={s.date}>
+            {userData && userData[0].toUpperCase() + userData.substring(1)}
+          </span>
+        </p>
+        <Link to="/profile">
+          <img
+            src={avatarUrl ? avatarUrl : avatar}
+            alt="user avatar"
+            className={s.avatar}
+          />
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className={s.wrapper}>
       <p className={s.wrapper__descr}>
-        <Link to="/profile" className={s.name}>
-          {name}
-        </Link>
+        <span className={s.name}>{name}</span>
         <span className={s.date}>
           {userData && userData[0].toUpperCase() + userData.substring(1)}
         </span>
       </p>
-      <Link to="/profile">
-        <img
-          src={avatarUrl ? avatarUrl : avatar}
-          alt="user avatar"
-          className={s.avatar}
-        />
-      </Link>
+      <img
+        src={avatarUrl ? avatarUrl : avatar}
+        alt="user avatar"
+        className={s.avatar}
+      />
     </div>
   );
 };
