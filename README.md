@@ -1,4 +1,4 @@
-Ссылка: ________  
+Ссылка: https://blog-zeta-ashy.vercel.app/  
 Использованные технологии:
 React  
 Redux Toolkit  
