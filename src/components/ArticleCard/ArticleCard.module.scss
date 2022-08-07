@@ -85,3 +85,45 @@
   }
 }
 
+.popover {
+  &__btn_wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__title {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    font-family: $Roboto-font-family, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+    color: #595959;
+  }
+
+  &__svg {
+    width: 25px;
+    height: 25px;
+  }
+
+  &__btn {
+    padding: 1px 8px;
+    border-radius: 4px;
+    font-family: $Roboto-font-family, sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: 400;
+
+    &_yes {
+      background-color: $processing-color;
+      color: $background-color-base;
+    }
+
+    &_no {
+      margin-right: 8px;
+      border: 1px solid $normal-color;
+    }
+  }
+}
+
