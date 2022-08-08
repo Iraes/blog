@@ -50,6 +50,16 @@ export const articlesApi = createApi({
           Authorization: `Bearer ${token}`,
         },
       }),
+      providesTags: (result) =>
+        result
+          ? [
+              {
+                type: "Articles" as const,
+                result,
+              },
+              { type: "Articles", id: "LIST" },
+            ]
+          : [{ type: "Articles", id: "LIST" }],
     }),
     like: builder.mutation<any, { slug: string; token: string }>({
       query: ({ slug, token }) => ({
