@@ -15,7 +15,7 @@ const EditArticle = () => {
   const { isAuth, token } = useSelector(selectUserInfo);
   const { slug } = useParams<{ slug: string }>();
 
-  const { data } = useGetArticleWithSlugQuery(slug);
+  const { data } = useGetArticleWithSlugQuery({ slug, token });
   const article = data && data.article;
   const [editArt, { data: responseData, error }] = useEditArticlesMutation();
 

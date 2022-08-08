@@ -39,9 +39,16 @@ export const articlesApi = createApi({
             ]
           : [{ type: "Articles", id: "LIST" }],
     }),
-    getArticleWithSlug: builder.query<{ article: IArticles }, string>({
-      query: (slug) => ({
+    getArticleWithSlug: builder.query<
+      { article: IArticles },
+      { slug: string; token: string }
+    >({
+      query: ({ slug, token }) => ({
         url: `/articles/${slug}`,
+        headers: {
+          "Content-Type": "application/json; charset=utf-8",
+          Authorization: `Bearer ${token}`,
+        },
       }),
     }),
     like: builder.mutation<any, { slug: string; token: string }>({

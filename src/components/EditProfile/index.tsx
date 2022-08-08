@@ -12,7 +12,6 @@ import {
 import { selectUserInfo, setUserInfo } from "../../redux/slices/userSlice";
 
 const EditProfile = () => {
-  const [isUpdate, setIsUpdate] = useState(false);
   const dispatch = useDispatch();
   const { isAuth, token } = useSelector(selectUserInfo);
   const [updateInfo, { data: responseData, error }] = useUpdateUserMutation();
@@ -22,8 +21,14 @@ const EditProfile = () => {
     formState: { errors },
     handleSubmit,
     setError,
+    setValue,
   } = useForm<IUpdateUser>();
 
+  useEffect(() => {
+    setValue("username", data.user.username);
+    setValue("email", data.user.email);
+    setValue("avatar", data.user.image);
+  }, []);
   useEffect(() => {
     if (responseData) {
       dispatch(setUserInfo(responseData));
@@ -32,7 +37,6 @@ const EditProfile = () => {
 
   const onsubmit: SubmitHandler<IUpdateUser> = async (data) => {
     await updateInfo({ ...data, token }).unwrap();
-    setIsUpdate(true);
   };
 
   useEffect(() => {

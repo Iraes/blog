@@ -39,8 +39,7 @@ const ArticleCard: FC<{
   const [visible, setVisible] = useState(false);
   const [like] = useLikeMutation();
   const [unLike] = useDeleteLikeMutation();
-  const [deleteArticle, { data: responseDelete, error }] =
-    useDeleteArticleMutation();
+  const [deleteArticle] = useDeleteArticleMutation();
 
   const hide = () => {
     setVisible(false);
@@ -130,7 +129,7 @@ const ArticleCard: FC<{
     <div className={`${s.wrapper} ${isShadow}`}>
       <div className={s.article__info}>
         <Link to={`/article/${slug}`} className={s.title}>
-          {cuttingDescription(title, 0, 5)}
+          {cuttingDescription(title, 45, 5)}
         </Link>
         <MyLike
           count={favoritesCount}
