@@ -25,15 +25,16 @@ const EditProfile = () => {
   } = useForm<IUpdateUser>();
 
   useEffect(() => {
-    setValue("username", data.user.username);
-    setValue("email", data.user.email);
-    setValue("avatar", data.user.image);
-  }, []);
-  useEffect(() => {
     if (responseData) {
       dispatch(setUserInfo(responseData));
     }
-  }, [responseData]);
+
+    if (data) {
+      setValue("username", data.user.username);
+      setValue("email", data.user.email);
+      setValue("avatar", data.user.image);
+    }
+  }, [responseData, data]);
 
   const onsubmit: SubmitHandler<IUpdateUser> = async (data) => {
     await updateInfo({ ...data, token }).unwrap();
